@@ -49,11 +49,7 @@ These rules help AI assistants understand our:
 
 ### Prerequisites
 1. **Clone this repository** first:
-   ```bash
-   git clone https://gitlab.solaredge.com/cloud-sw/installer/backend/ai-rules
-   cd ai-rules
-   ```
-
+  
 ### For Windsurf Users
 
 #### Global Configuration Setup
