@@ -2,37 +2,27 @@
 **Repository Description:**  
 Repository to define and manage custom AI rules and behaviors, supporting Windsurf and Cursor rules, organized by category and technology for tailored AI behavior and easy maintenance.
 
-This repository provides a structured framework to **define, organize, and manage custom AI rules and behaviors** tailored to specific domains, technologies, and user preferences. It supports multiple behavior types, including:
+This repository provides a structured framework to **define, organize, and manage custom AI rules and behaviors** tailored to specific domains and technologies. The rules are designed to work with various AI coding assistants including Windsurf, Cursor, and other AI tools.
 
-- **Windsurf rules** – for dynamic workflow guidance.
-- **Cursor rules** – for context-sensitive decision-making.
-
-The repository is organized hierarchically by **category**, **technology**, and **rule type**, making it easy to locate, add, or modify rules for specific domains.
+The repository is organized hierarchically by **category** and **technology**, making it easy to locate, add, or modify rules for specific domains.
 
 ---
 
 ## 📂 Repository Structure
-The repository is organized hierarchically by **category**, **technology**, and **rule type**:
+The repository is organized hierarchically by **category** and **technology**:
 ```
 ai-rules/
-├── backend/
-│   ├── java-springboot/
-│   │   ├── windsurf/
-│   │   │   └── <rule-files>
-│   │   └── cursor/
-│   │       └── <rule-files>
-│   └── python-fastapi/
-│       ├── windsurf/
-│       └── cursor/
-└── frontend/
-    └── type-script-react/
-        ├── windsurf/
-        └── cursor/
+├── rules/
+│   ├── backend/
+│   │   ├── java-springboot-rules.md
+│   │   └── python-fastapi-rules.md
+│   └── frontend/
+│       └── type-script-react-rules.md
+└── README.md
 ```
 
 - **Root Categories:** Broad areas like `backend`, `frontend`, `devops`, etc.
-- **Subcategories:** Framework or technology-specific directories, e.g., `java-springboot`.
-- **Rule Type Directories:** `windsurf/` and `cursor/` for behavior-specific rules.
+- **Rule Files:** Technology-specific rule files with consistent naming: `{technology}-rules.md`.
 
 ---
 
@@ -49,34 +39,41 @@ These rules help AI assistants understand our:
 
 ### Prerequisites
 1. **Clone this repository** first:
-  
+   ```bash
+   git clone <repository-url>
+   cd AI-Rules
+   ```
+
 ### For Windsurf Users
 
 #### Global Configuration Setup
-1. **Navigate to the cloned ai-rules directory**:
+1. **Navigate to the cloned AI-Rules directory**:
    ```bash
-   cd ai-rules
+   cd AI-Rules
    ```
 2. **Copy rules to global memories location** (replace 'YOUR_USERNAME' with your username):
    ```bash
    # For Spring Boot projects - Global configuration
-   cp backend/java-springboot/windsurf/windsurf-rules.md /Users/YOUR_USERNAME/.codeium/memories/windsurf-rules.md
+   cp rules/backend/java-springboot-rules.md /Users/YOUR_USERNAME/.codeium/memories/java-springboot-rules.md
    
-   # Example for user 'john':
-   cp backend/java-springboot/windsurf/windsurf-rules.md /Users/john/.codeium/memories/windsurf-rules.md
+   # For Python FastAPI projects
+   cp rules/backend/python-fastapi-rules.md /Users/YOUR_USERNAME/.codeium/memories/python-fastapi-rules.md
+   
+   # For React TypeScript projects
+   cp rules/frontend/type-script-react-rules.md /Users/YOUR_USERNAME/.codeium/memories/type-script-react-rules.md
    ```
 3. **Rules will apply** to all projects automatically
 4. **Verify setup**: Ask Windsurf "What are the coding guidelines?" in any project
 
 #### Alternative: Manual Setup via Windsurf Plugin UI
-1. **Open your project** in IntelliJ IDEA with Windsurf plugin installed
+1. **Open your project** in your IDE with Windsurf plugin installed
 2. **Access Windsurf Rules panel**:
    - Click on the **"Rules, Memories & Workflows"** button in Windsurf
 3. **Create Global Rules**:
    - Choose the **"Rules"** tab
    - Click the **"+ Global"** button
 4. **Add Rules Content**:
-   - Copy the content from `windsurf-rules.md` file
+   - Copy the content from the appropriate `{technology}-rules.md` file
    - Paste it into the `global_rules.md` file that opens
    - **Save** the file
 5. **Rules will apply** to all projects automatically
@@ -91,10 +88,13 @@ These rules help AI assistants understand our:
    - In the settings window, go to **"Rules, Memories, Commands"** section
    - Click on **"User Rules"**
 3. **Add Rules Content**:
-   - Copy the content from the appropriate technology language rules directory (`AGENTS.md`)
+   - Copy the content from the appropriate technology rules file (`{technology}-rules.md`)
    - Paste it into the User Rules text area
    - **Save** the settings
 4. **Rules will apply** to all projects automatically
+
+### For Other AI Tools
+Most AI coding assistants support custom rules or instructions. Simply copy the content from the appropriate `{technology}-rules.md` file and add it to your AI tool's configuration according to its documentation.
 
 ## 🛠️ Usage Guidelines
 
@@ -131,12 +131,11 @@ These rules help AI assistants understand our:
 
 ### File Locations by Technology
 
-| Technology | Windsurf Rules | Cursor Rules |
-|------------|----------------|--------------|
-| **Spring Boot Java** | `backend/java-springboot/windsurf/windsurf-rules.md` | `backend/java-springboot/cursor/AGENTS.md` |
-| **FastAPI Python** | `backend/python-fastapi/windsurf/windsurf-rules.md` | `backend/python-fastapi/cursor/AGENTS.md` |
-| **React TypeScript** | `frontend/type_script-react/windsurf/windsurf-rules.md` | `frontend/type_script-react/cursor/AGENTS.md` |
-| **Angular TypeScript** | `frontend/type_script-angular/windsurf/windsurf-rules.md` | `frontend/type_script-angular/cursor/AGENTS.md` |
+| Technology | Rule File Location |
+|------------|-------------------|
+| **Spring Boot Java** | `rules/backend/java-springboot-rules.md` |
+| **FastAPI Python** | `rules/backend/python-fastapi-rules.md` |
+| **React TypeScript** | `rules/frontend/type-script-react-rules.md` |
 
 ---
 
